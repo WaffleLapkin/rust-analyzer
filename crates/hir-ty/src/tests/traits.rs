@@ -166,7 +166,7 @@ fn test() {
 fn infer_try() {
     check_types(
         r#"
-//- /main.rs crate:main deps:core
+//- /main.rs edition:2018 crate:main deps:core
 fn test() {
     let r: Result<i32, u64> = Result::Ok(1);
     let v = r?;
@@ -206,7 +206,7 @@ pub mod prelude {
 fn infer_try_trait_v2() {
     check_types(
         r#"
-//- /main.rs crate:main deps:core
+//- /main.rs edition:2018 crate:main deps:core
 fn test() {
     let r: Result<i32, u64> = Result::Ok(1);
     let v = r?;
@@ -286,7 +286,7 @@ pub mod iter {
     }
 }
 pub mod prelude {
-    pub mod rust_2018 {
+    pub mod rust_2021 {
         pub use crate::iter::*;
     }
 }
